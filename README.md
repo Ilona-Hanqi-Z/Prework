@@ -23,6 +23,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [x] Adding a slide to choose the tip rate
+- [x] Adding a Setting screen which allows users to change the default tip rates
 
 ## Video Walkthrough
 
