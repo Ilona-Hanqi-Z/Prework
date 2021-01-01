@@ -4,7 +4,7 @@
 
 Submitted by: **Hanqi Zhang**
 
-Time spent: **0.5** hours spent in total
+Time spent: **2.5** hours spent in total
 
 ## User Stories
 
