@@ -29,10 +29,9 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![](https://i.imgur.com/PKiLm4w.gif)
+![](https://i.imgur.com/m5dilVb.gif)
 
-
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+GIF created with [Ezgif](https://ezgif.com/).
 
 ## Notes
 
