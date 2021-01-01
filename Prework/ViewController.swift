@@ -16,6 +16,31 @@ class ViewController: UIViewController {
     @IBOutlet weak var rateControl: UISlider!
     @IBOutlet weak var rateLabel: UILabel!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view will appear")
+        // This is a good place to retrieve the default tip percentage from UserDefaults
+        // and use it to update the tip amount
+        let defaults = UserDefaults.standard
+        let firstDefault = defaults.integer(forKey: "first default")
+        print(firstDefault)
+        let secondDefault = defaults.integer(forKey: "second default")
+        let thirdDefault = defaults.integer(forKey: "third default")
+        
+        tipControl.setTitle("\(firstDefault)%", forSegmentAt: 0)
+        tipControl.setTitle("\(secondDefault)%", forSegmentAt: 1)
+        tipControl.setTitle("\(thirdDefault)%", forSegmentAt: 2)
+        let tipPercentages = [firstDefault, secondDefault, thirdDefault]
+        
+        let index = tipControl.selectedSegmentIndex
+        let rate = Int(tipPercentages[index])
+        rateLabel.text = "\(rate)%"
+        billField.text = "0"
+        tipLabel.text = "$0.00"
+        totalLabel.text = "$0.00"
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,11 +55,16 @@ class ViewController: UIViewController {
     @IBAction func calculateTipSegmented(_ sender: Any) {
         let bill = Double(billField.text!) ?? 0
         
-        let tipPercentages = [0.15, 0.18, 0.2]
+        let defaults = UserDefaults.standard
+        let firstDefault = defaults.integer(forKey: "first default")
+        let secondDefault = defaults.integer(forKey: "second default")
+        let thirdDefault = defaults.integer(forKey: "third default")
+        
+        let tipPercentages = [firstDefault, secondDefault, thirdDefault]
         
         let index = tipControl.selectedSegmentIndex
-        let rate = Int(tipPercentages[index] * 100)
-        let tip = bill * tipPercentages[index]
+        let rate = Int(tipPercentages[index])
+        let tip = bill * Double(tipPercentages[index])/100
         let total = bill + tip
         
         tipLabel.text = String(format: "$%.2f", tip)
