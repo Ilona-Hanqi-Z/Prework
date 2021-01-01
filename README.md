@@ -31,6 +31,7 @@ Here's a walkthrough of implemented user stories:
 
 ![](https://i.imgur.com/m5dilVb.gif)
 
+(For some reasons, the GIF may not appear properly.)
 GIF created with [Ezgif](https://ezgif.com/).
 
 ## Notes
